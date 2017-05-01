@@ -43,9 +43,6 @@ $cakeDescription = __d('cake_dev', __('HSMM-Pi'));
     <?php echo $this->Html->script('bootstrap.min'); ?>
     <?php echo $this->fetch('script'); ?>
 
-    <!-- Bing Map APIs to display node maps -->
-    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
-
     <!-- Reboot Modal -->
     <div id="rebootModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabelReboot" aria-hidden="true">
       <div class="modal-dialog">
@@ -212,5 +209,7 @@ $cakeDescription = __d('cake_dev', __('HSMM-Pi'));
 
   <?php echo $this->element('sql_dump'); ?>
   <?php echo $this->Html->script('bootstrap.min'); ?>
+  <!-- Google maps API for node maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<?php echo ((null != $maps_api_key) ? $maps_api_key : '');?>&callback=initialize"></script>
 </body>
 </html>
